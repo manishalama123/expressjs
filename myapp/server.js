@@ -1,17 +1,9 @@
-const express = require('express');
+import express from "express";
+import userRouter from "./routes/users.js";
+
 const app = express();
-
-// route import gareko
-const userRoutes = require('./routes/users');
-
-// link the route
-app.use('/users', userRoutes);
-
-app.get('/', (req, res)=>{
-    res.send("Hello World");
-})
-
+app.use("/api", userRouter);
 
 app.listen(3000, ()=>{
-    console.log("Server is running on 3000 port");
+    console.log("hello on 3000 port");
 })
